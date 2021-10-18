@@ -12,7 +12,7 @@ class App extends Component {
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/users" render={() => <Users greetingsMessage={greetings} />} />
+        <Route path="/users/:id" render={(props) => <Users { ...props } greetingsMessage={greetings} />} />
         <ul>
           <li><Link to="/"> Home </Link></li>
           <li><Link to="/about"> About </Link></li>
