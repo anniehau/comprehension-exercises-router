@@ -6,11 +6,13 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
+    const greetings = 'Good Morning'
+
     return (
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
-        <Route path="/users" component={Users} />
+        <Route path="/users" render={() => <Users greetingsMessage={greetings} />} />
         <ul>
           <li><Link to="/"> Home </Link></li>
           <li><Link to="/about"> About </Link></li>
